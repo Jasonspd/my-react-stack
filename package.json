@@ -4,13 +4,18 @@
   "description": "My React Boilerplate",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
     "build-babel": "npm run build-babel-server && npm run build-babel-client",
     "build-babel-server": "babel src/server --out-dir ./dist",
     "build-babel-client": "babel src/client --copy-files --out-dir ./dist/public",
     "start": "node ./dist/server.js",
     "test": "jest ./src",
     "clean": "rimraf dist node_modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jasonspd/my-react-stack.git"
   },
   "author": "Jason Luu",
   "license": "ISC",
