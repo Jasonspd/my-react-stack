@@ -1,15 +1,16 @@
 const express = require('express')
 
 export default class WebServer {
+  
   constructor () {
     this.app = express()
     this.app.use(express.static('dist/public'))
   }
 
-  start () {
+  start (port) {
     return new Promise((resolve, reject) => {
       try {
-        this.server = this.app.listen(3000, function () {
+        this.server = this.app.listen(port, function () {
           resolve()
         })
       } catch (e) {
